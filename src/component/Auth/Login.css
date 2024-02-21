@@ -1,0 +1,132 @@
+.login{
+    width: 100%;
+    height: 100%;
+}
+
+.erClass{
+    color: red;
+    z-index: 90000000000;
+    margin-top: 30vh;
+    font-size: 110px;
+}
+
+.login-header{
+    background: linear-gradient(rgba(47, 110, 107,0.9),rgba(0,0,0,0.6)),url('../../assets/banner.jpg');
+    height: 30vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.header-cont{
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    color: #fff;
+}
+
+.header-cont p{
+    font-size: 35px;
+}
+
+.login-cont{
+    max-width:1300px;
+    margin: 10vh auto;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contant{
+    width: 30%;
+    height: auto;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    border-radius: 5px;
+}
+
+.contant h1{
+    font-size: 15px;
+}
+
+.contant h2{
+    font-size: 30px;
+    color: rgb(47, 110, 107);
+}
+
+.log-link{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.log-link p{
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 300;
+}
+
+.contant form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 30px;
+    width: 100%;
+}
+
+.contant form input{
+    width: 100%;
+    padding: 11px 30px;
+    border-radius: 7px;
+    font-size: 18px;
+    line-height: 18px;
+    border: 1px solid black;
+}
+
+.contant form button{
+    padding: 7px 35px;
+    border-radius: 4px;
+    background: linear-gradient(to left , rgba(47, 110, 107,0.9),rgba(0,0,0,0.6));
+    color: white;
+}
+
+.others-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: rgba(47, 110, 107,1);
+}
+
+@media screen and (max-width:800px) {
+    .header-cont p{
+        font-size: 25px;
+    }
+    
+    .contant{
+        width: 95%;
+        padding: 10px 0px;
+    }
+
+    .contant form{
+        width: 100%;
+    }
+
+    .contant form input{
+        width: 100%;
+    }
+}

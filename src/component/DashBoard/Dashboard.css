@@ -1,0 +1,90 @@
+.dashboard {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('../../assets/banner.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .desh-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .dash-cont {
+    position: absolute;
+    margin: 0 auto;
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .dash-nav {
+    position: fixed;
+    background: #969696;
+    height: auto;
+    width: 10%;
+    height: 90%;
+    z-index: -100;
+    opacity: 0;
+    margin-top: 12vh;
+    border-radius: 2px;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .52s;
+    overflow-y: scroll;
+    color: white;
+  }
+  
+  .dash-nav-open {
+    z-index: 100;
+    opacity: 1;
+  }
+
+  .dash-nv-header {
+    height: auto;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 30px 10px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .dash-nav ul {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    padding: 50px 5px;
+  }
+  
+  .lnk-header {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .dash-nav {
+      width: 40%;
+      color: white;
+    }
+  
+    .dash-cont {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
