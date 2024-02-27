@@ -18,6 +18,7 @@ const Course = () => {
     let content
     const navigate = useNavigate()
     const [modalOpen,setModalOPen] = useState(false)
+    const [updateId,setUpdateId] = useState('')
     const {data: count} = useCourseCountQuery()
     const {data: courses , isError , isLoading , isFetching , isSuccess } = useGetAllCoursesQuery()
     let [deleteSingleCourse , {
@@ -43,13 +44,12 @@ const Course = () => {
       await deleteSingleCourse(id)
     }
 
-    console.log(courses?.courses)
+
 
     content = (
       <div className='dash-course-holder'>
         <h1>All Courses</h1>
         <h2>Total course: {courses?.courses.length}</h2>
-        {/* <button onClick={() => navigate('/dash/add')} className='bg-white text-black py-2 px-8'>Add Post</button> */}
         <table className='users-table'>
                 <thead>
                     <tr>
@@ -61,7 +61,7 @@ const Course = () => {
                         <th>Exam</th>
                         <th>Fee</th>
                         <th>Class Number</th>
-                        <th>Total Enroled</th>
+                        {/* <th>Total Enroled</th> */}
                         <th>Delete</th>
                         <th>Update</th>
                     </tr>
@@ -76,10 +76,10 @@ const Course = () => {
                             <td>{course?.course_assignment}</td>
                             <td>{course?.course_exam}</td>
                             <td>{course?.course_fee}</td>
-                            <td>{course?.course_nmbr}</td>
+                            {/* <td>{course?.course_nmbr}</td> */}
                             <td>{course?.course_nmbr}</td>
                             <td><button onClick={() => handleDeleteCourse(course._id)}><FontAwesomeIcon icon={faTrashCan} size='xl'/></button></td>
-                            <td><button onClick={() => setModalOPen(!modalOpen)}><FontAwesomeIcon icon={faPenNib} size='xl'/></button></td>
+                            <td><button onClick={() => {setModalOPen(!modalOpen);setUpdateId(course._id)}}><FontAwesomeIcon icon={faPenNib} size='xl'/></button></td>
                         </tr>
                     ))}
                 </tbody>
@@ -87,6 +87,8 @@ const Course = () => {
             <UpdateCourse 
               modalOpen={modalOpen}
               setModalOPen={setModalOPen}
+              updateId={updateId}
+              setUpdateId={setUpdateId}
             />
       </div>
     )

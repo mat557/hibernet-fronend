@@ -25,15 +25,37 @@ export const courseApiSlice = apiSlice.injectEndpoints({
         updateSingleCourse: builder.mutation({
             query: ( credentials ) =>({
                 url   : '/courses/update/course',
-                method: 'patch',
+                method: 'PATCH',
                 body  : credentials,
-            })
+            }),
+
+            async onQueryStarted( credentials , {dispatch , queryFulfilled}){
+                try{
+                    await queryFulfilled
+                    dispatch(
+                        courseApiSlice.util.updateQueryData( 'getAllCourses' , undefined , (draft) => {
+                            let foundedCourse = draft?.courses.find((course) => course._id === credentials.id)
+                            
+                            foundedCourse.code              = credentials?.code ? credentials?.code: foundedCourse.code 
+                            foundedCourse.course_assignment = credentials?.course_assignment ? credentials?.course_assignment: foundedCourse.course_assignment
+                            foundedCourse.course_description= credentials?.course_description? credentials?.course_description : foundedCourse.course_description
+                            foundedCourse.course_exam       = credentials?.course_exam ? credentials?.course_exam : foundedCourse.course_exam 
+                            foundedCourse.course_fee        = credentials?.course_fee ? credentials?.course_fee: foundedCourse.course_fee 
+                            foundedCourse.course_nmbr       = credentials?.course_nmbr ? credentials?.course_nmbr: foundedCourse.course_nmbr 
+                            foundedCourse.course_title      = credentials?.course_title ? credentials?.course_title: foundedCourse.course_title 
+                            
+                        })
+                    )
+                }catch(err){
+                    console.log(err)
+                }
+            }
         }),
 
         insertSingleCourse: builder.mutation({
             query: ( credentials ) =>({
                 url   : '/courses/insert/course',
-                method: 'post',
+                method: 'POST',
                 body  : credentials,
             }),
 
@@ -65,7 +87,7 @@ export const courseApiSlice = apiSlice.injectEndpoints({
         deleteSingleCourse: builder.mutation({
             query: ( id ) => ({
                 url: `courses/delete/course/${id}`,
-                method:'delete'
+                method:'DELETE'
             }),
 
             async onQueryStarted( id , {dispatch , queryFulfilled}){
