@@ -18,10 +18,6 @@ const Signin = () => {
     let [ signup , { isLoading , isError , isSuccess , error }] = useSignupMutation()
     
     
-    if(isLoading){
-        content = <Loader />
-    }
-
     useEffect(()=>{
         if(email || isSuccess || localStorage.getItem('refresh_token')){
             navigate('/')
@@ -34,6 +30,11 @@ const Signin = () => {
             error = ''
         }
     },[isError,error,isSuccess])
+
+    if(isLoading){
+        return <Loader />
+    }
+
 
     const onSubmit = async(data) => {
         const response = await signup(data)

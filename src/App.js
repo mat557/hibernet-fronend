@@ -83,7 +83,7 @@ function App() {
                       <Route index element={<Profile />}/>
                       <Route path="course" element={<Course />}/>
                       <Route path="course/add" element={<AddCourse />}/>
-                      <Route path="course/update" element={<UpdateCourse />}/>
+                      {/* <Route path="course/update" element={<UpdateCourse />}/> */}
                       <Route path="blog" element={<Blogs />}/>
                       <Route path="blog/add" element={<AddBlogs />}/>
                       <Route path="blog/update" element={<UpdateBlog />}/>

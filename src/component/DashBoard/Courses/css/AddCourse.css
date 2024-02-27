@@ -1,0 +1,60 @@
+.add-course-holder{
+    padding-top: 15vh;
+    text-align: center;
+}
+
+.add-course-holder h1{
+    font-size: 45px;
+}
+
+.add-course-holder form{
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    gap: 30px;
+    width: 70%;
+    margin: 10px auto;
+    padding: 40px 0px;
+    margin-bottom: 30px;
+}
+
+.add-course-holder form input{
+    background: transparent;
+    padding: 10px 30px;
+    border-radius: 2px;
+    border: 1px solid white;
+    color: white;
+}
+
+.add-course-holder form textarea{
+    background: transparent;
+    padding: 10px 30px;
+    border-radius: 2px;
+    min-height: 80px;
+    border: 1px solid white;
+    color: white;
+}
+
+.add-course-holder form select{
+    background: black;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 2px;
+    border: 1px solid white;
+}
+
+.input-btn{
+    width: 140px;
+    margin: 10px auto;
+    padding: 8px 19px;
+    background-color: white;
+    color: black;
+    border-radius: 3px;
+}
+
+@media screen and (max-width:500px) {
+    .add-course-holder form{
+        width: 95%;
+        margin: 0 auto;
+    }
+}

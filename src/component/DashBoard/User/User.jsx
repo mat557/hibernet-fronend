@@ -8,8 +8,8 @@ const User = () => {
     let content
     const {data: users , isLoading , isError , isSuccess , error} = useGetUsersQuery()
     
-    if(isLoading && !isSuccess){
-        content = <Loader />
+    if(isLoading){
+        return <Loader />
     }
 
 

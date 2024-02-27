@@ -47,6 +47,8 @@ const ConsitantLogIn = () => {
         content = <Outlet />
     }else if(error){
         content = <p>Login please</p>
+    }else if(consistant && !token){
+        content = <Outlet />
     }
 
     // if(!token){

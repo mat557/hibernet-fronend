@@ -3,8 +3,6 @@ import './Login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form"
-// import { logIn } from '../../feature/auth/authSlice'
-import { useDispatch, useSelector } from 'react-redux'
 import { useLoginMutation } from './authApiSlice'
 import toast from 'react-hot-toast'
 import { useEffect } from 'react'
@@ -19,16 +17,11 @@ const Login = () => {
     let [login , { isLoading , isError , isSuccess , error }] = useLoginMutation()
     const { register, handleSubmit } = useForm()
 
-    if(isLoading){
-        content = <Loader />
-    }
-    
     useEffect(()=>{
         if(email || isSuccess || localStorage.getItem('refresh_token')){
             navigate('/')
         }
     },[email,isSuccess,localStorage.getItem('refresh_token')])
-
 
 
     useEffect(()=>{
@@ -37,6 +30,12 @@ const Login = () => {
             error = ''
         }
     },[isError,error,isSuccess])
+
+    
+    if(isLoading){
+        return <Loader />
+    }
+    
     
     const onSubmit = async(data) => {
         const response = await login(data)

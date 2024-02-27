@@ -18,16 +18,16 @@ const NavBar = ({ open , setOpen , navmenu }) => {
     const [small] = useGetScreen()
     const { pathname } = useLocation()
     const navigate = useNavigate()
-
+    const location = useLocation()
     const handleLogOut = async() =>{
         // const logoutevent = await logout()
         // console.log(logoutevent.status)
         dispatch(logOut())
     }
+    
 
-  
     content = (
-        <div ref={navmenu} className={ small ? "navbar-holder regular" : "navbar-holder"}>
+        <div ref={navmenu} className={ small || location?.pathname?.indexOf('/dash') !== -1  ? "navbar-holder regular" : "navbar-holder"}>
             <div className='navbar-content'>
                 
                 <div className='nav-text'>

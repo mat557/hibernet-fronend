@@ -1,0 +1,16 @@
+.dash-course-holder{
+    margin-top: 13vh;
+    padding: 50px 10px;
+}
+
+.dash-course-holder h1{
+    text-align: left;
+    color: white;
+    font-size: 45px;
+}
+
+.dash-course-holder h2{
+    text-align: left;
+    color: white;
+    font-size: 20px;
+}

@@ -25,10 +25,10 @@
     background: #969696;
     height: auto;
     width: 10%;
-    height: 90%;
+    height: 100%;
     z-index: -100;
     opacity: 0;
-    margin-top: 12vh;
+    margin-top: 11vh;
     border-radius: 2px;
     top: 0;
     padding: 10px;
@@ -39,10 +39,11 @@
     transition: all .52s;
     overflow-y: scroll;
     color: white;
+    padding-bottom: 50px;
   }
   
   .dash-nav-open {
-    z-index: 100;
+    z-index: 10000;
     opacity: 1;
   }
 

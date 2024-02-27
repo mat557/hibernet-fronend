@@ -29,7 +29,7 @@ const Dashboard = ({ sidemenu , dashOpen }) => {
                             <div><FontAwesomeIcon icon={faFacebook} color='black'/> Courses</div>
                             <Link to="course" className='lnk-header-ink'><FontAwesomeIcon icon={faArrowRightArrowLeft} className='ml-4'/>check</Link>
                             <Link to="course/add" className='lnk-header-ink'><FontAwesomeIcon icon={faArrowRightArrowLeft} className='ml-4 mt-3'/>add</Link>
-                            <Link to="course/update" className='lnk-header-ink'><FontAwesomeIcon icon={faArrowRightArrowLeft} className='ml-4 mt-3'/>update</Link>
+                            {/* <Link to="course/update" className='lnk-header-ink'><FontAwesomeIcon icon={faArrowRightArrowLeft} className='ml-4 mt-3'/>update</Link> */}
                         </div>
                         <div className='lnk-header'>
                             <div><FontAwesomeIcon icon={faFacebook} color='black'/> Users</div>
