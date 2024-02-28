@@ -86,7 +86,7 @@ function App() {
                       {/* <Route path="course/update" element={<UpdateCourse />}/> */}
                       <Route path="blog" element={<Blogs />}/>
                       <Route path="blog/add" element={<AddBlogs />}/>
-                      <Route path="blog/update" element={<UpdateBlog />}/>
+                      {/* <Route path="blog/update" element={<UpdateBlog />}/> */}
                       <Route path="comment" element={<Comment />}/>
                       <Route path="question" element={<Question />}/>
                       <Route path="users" element={<User />}/>

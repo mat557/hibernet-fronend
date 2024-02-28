@@ -39,7 +39,7 @@ const Dashboard = ({ sidemenu , dashOpen }) => {
                             <div><FontAwesomeIcon icon={faFacebook} color='black'/> Blogs</div>
                             <Link to="blog" className='lnk-header-ink'><FontAwesomeIcon icon={faArrowRightArrowLeft} className='ml-4'/>check</Link>
                             <Link to="blog/add" className='lnk-header-ink'><FontAwesomeIcon icon={faArrowRightArrowLeft} className='ml-4 mt-3'/>add</Link>
-                            <Link to="blog/update" className='lnk-header-ink'><FontAwesomeIcon icon={faArrowRightArrowLeft} className='ml-4 mt-3'/>update</Link>
+                            {/* <Link to="blog/update" className='lnk-header-ink'><FontAwesomeIcon icon={faArrowRightArrowLeft} className='ml-4 mt-3'/>update</Link> */}
                         </div>
                         <div className='lnk-header'>
                             <div><FontAwesomeIcon icon={faFacebook} color='black'/> Question</div>

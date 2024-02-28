@@ -13,26 +13,24 @@ const BottomBar = ({dashOpen,setDashOpen}) => {
     const location = useLocation()
 
 
+
     useEffect(()=>{
-        if(location?.pathname === '/login'){
-            setShow(false)
-        }else if(location?.pathname === '/signin'){
-            setShow(false)
-        }else if(location?.pathname === '/dash'){
-            // setShow(false)
-        }else{
+        if(location?.pathname.indexOf('/dash') !== -1){
             setShow(true)
+        }else{
+            setShow(false)
         }
     },[show,location])
     
+    console.log(location?.pathname.indexOf('/dash'))
     
     content = (
-        <div className={show ? "bottom-nav" : 'show'}>
+        <div className="bottom-nav">
             <div className="content">
                 <Link to='/blog' className='short-link'><FontAwesomeIcon className='short-link-icon' icon={faEnvelope}/></Link>
                 <Link to='/qna'className='short-link'><FontAwesomeIcon className='short-link-icon' icon={faCircleQuestion}/></Link>
                 <Link to='/contact' className='short-link'><FontAwesomeIcon className='short-link-icon' icon={faMessage}/></Link>
-                <Link className='short-link' onClick={()=> setDashOpen(!dashOpen)}><FontAwesomeIcon className='short-link-icon' icon={dashOpen ? faArrowAltCircleLeft : faArrowAltCircleRight}/></Link>
+                {show && <Link className='short-link' onClick={()=> setDashOpen(!dashOpen)}><FontAwesomeIcon className='short-link-icon' icon={dashOpen ? faArrowAltCircleLeft : faArrowAltCircleRight}/></Link>}
             </div>
         </div>
     )

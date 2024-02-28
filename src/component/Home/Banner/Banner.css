@@ -1,6 +1,7 @@
 .banner{
     position: relative;
-    width: 100%;
+    max-width: 2000;
+    margin: 0 auto;
     height: 70vh;
 }
 
@@ -15,7 +16,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(to right , rgba(0,0,0,0.6),rgba(47, 110, 107,0.8));
+    background: linear-gradient(to bottom , rgba(163, 164, 165, 0.6),rgba(47, 110, 107,0.8));
 }
 
 .info-box{
@@ -25,17 +26,25 @@
     top: 70%;
     transform: translate(-50%,-70%);
     height: auto;
-    opacity: .2;
-    animation: pulseOpacity 3s infinite alternate;
 }
 
-@keyframes pulseOpacity {
-    0% {
-        opacity: .2;
-    }
-    100% {
-        opacity: 1;
-    }
+.navigation{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-btn{
+    font-size: 25px;
+    color: white;
+    font-weight: 900;
+}
+
+.dis{
+    font-size: 25px;
+    color: rgb(190, 189, 189);
+    font-weight: 900;
 }
 
 .info{
@@ -75,6 +84,10 @@
 @media screen and (max-width:800px) {
     .banner{
         height: 60vh;
+    }
+
+    .info-box{
+        width: 90%;
     }
 
     .info{

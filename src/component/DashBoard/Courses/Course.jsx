@@ -4,22 +4,18 @@ import './Course.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
 import {  
-          useCourseCountQuery, 
           useDeleteSingleCourseMutation, 
           useGetAllCoursesQuery
         } from './courseApiSlice'
 import { faPenNib } from '@fortawesome/free-solid-svg-icons'
-import { useNavigate } from 'react-router-dom'
 import UpdateCourse from './UpdateCourse'
 import { useState } from 'react'
 
 
 const Course = () => {
     let content
-    const navigate = useNavigate()
     const [modalOpen,setModalOPen] = useState(false)
     const [updateId,setUpdateId] = useState('')
-    const {data: count} = useCourseCountQuery()
     const {data: courses , isError , isLoading , isFetching , isSuccess } = useGetAllCoursesQuery()
     let [deleteSingleCourse , {
                 isError: isDeleteError,
@@ -31,17 +27,14 @@ const Course = () => {
       return <Loader />
     }
 
-    if(isDeleteError){
-      toast.error("Failed to procceed!")
-    }
-
-    if(isDeleteSuccess){
-      toast.success("Course Deleted!")
-    }
-
 
     const handleDeleteCourse = async( id ) =>{
-      await deleteSingleCourse(id)
+      const res = await deleteSingleCourse(id)
+      if(res?.data?.result?.acknowledged){
+        toast.success("Course Deleted!")
+      }else{
+        toast.error("Failed to procceed!")
+      }
     }
 
 

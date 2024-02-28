@@ -35,6 +35,7 @@ const AddCourse = () => {
           <input type="number"  placeholder="total exam number" {...register("course_exam")}  required />
           <input type="number"  placeholder="total assignment number" {...register("course_assignment")}  required />
           <select {...register("code")} required >
+            <option value="">Select</option>
             <option value="physics-1">Physics First Paper</option>
             <option value="physics-2">Physics Second Paper</option>
             <option value="chemistry-1">Chemistry First Paper</option>

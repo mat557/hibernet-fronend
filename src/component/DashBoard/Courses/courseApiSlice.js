@@ -95,7 +95,6 @@ export const courseApiSlice = apiSlice.injectEndpoints({
                     await queryFulfilled
                     dispatch(
                         courseApiSlice.util.updateQueryData( 'getAllCourses' , undefined , (draft) => {
-                            console.log(JSON.stringify(draft))
                             const courses = draft?.courses?.filter((course) => course._id !== id)
 
                             return {courses : courses }

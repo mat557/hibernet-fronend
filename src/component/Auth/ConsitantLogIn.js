@@ -16,12 +16,11 @@ const ConsitantLogIn = () => {
     const [consist,{isUninitialized,isError,isLoading,isSuccess,error}] = useConsistMutation()
     const token = localStorage.getItem('refresh_token')
 
-    useEffect(()=>{
-        if(error && error.status === 400){
-            localStorage.removeItem('refresh_token')
-        }
-    },[error])
-
+    // useEffect(()=>{
+    //     if(isError && error && error.status === 400){
+    //         localStorage.removeItem('refresh_token')
+    //     }
+    // },[error,isError])
 
     useEffect(()=>{
         if(token){
@@ -38,6 +37,14 @@ const ConsitantLogIn = () => {
         }
     },[token,consistant])
     
+    if(isLoading){
+        return <Loader />
+    }
+
+    if(isError && error && error?.status === 400){
+        localStorage.removeItem('refresh_token')
+    }
+
     
     if(token && email){
         content = <Outlet />
