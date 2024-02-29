@@ -12,7 +12,10 @@
 .open{
     top: 0px;
 }
-
+.update-area{
+    width: 1300px;
+    margin: 0 auto;
+}
 .update-content{
     width: 80%;
     margin:20vh auto;

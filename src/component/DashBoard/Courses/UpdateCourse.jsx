@@ -36,27 +36,29 @@ const UpdateCourse = ({ modalOpen , setModalOPen , setUpdateId , updateId }) => 
 
     content = (
       <div className={modalOpen ? 'updatebox-holder open' : 'updatebox-holder'}>
-        <div className="update-content">
-          <h5 className='modal-h' >proceed for id- {updateId} ?</h5>
-          <button className='modal-close' onClick={() => setModalOPen(!modalOpen)}><FontAwesomeIcon icon={faXmark}/></button>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input type="text" placeholder="Course Title" {...register("course_title")} />
-            <input type="number"  placeholder="total class number" {...register("course_nmbr")}/>
-            <input type="number"  placeholder="total exam number" {...register("course_exam")}/>
-            <input type="number"  placeholder="total assignment number" {...register("course_assignment")}/>
-            <select {...register("code")}>
-              <option value="">Select</option>
-              <option value="physics-1">Physics First Paper</option>
-              <option value="physics-2">Physics Second Paper</option>
-              <option value="chemistry-1">Chemistry First Paper</option>
-              <option value="chemistry-2">Chemistry Second Paper</option>
-              <option value="math-1">Math First Paper</option>
-              <option value="math-2">Math Second Paper</option>
-            </select>
-            <textarea type="text" placeholder="Course description" {...register("course_description")} />
-            <input type="number" placeholder="Course fee" {...register("course_fee")}/>
-            <button className="input-btn">Submit</button>
-          </form>
+        <div className='update-area'>
+          <div className="update-content">
+            <h5 className='modal-h' >proceed for id- {updateId} ?</h5>
+            <button className='modal-close' onClick={() => setModalOPen(!modalOpen)}><FontAwesomeIcon icon={faXmark}/></button>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input type="text" placeholder="Course Title" {...register("course_title")} />
+              <input type="number"  placeholder="total class number" {...register("course_nmbr")}/>
+              <input type="number"  placeholder="total exam number" {...register("course_exam")}/>
+              <input type="number"  placeholder="total assignment number" {...register("course_assignment")}/>
+              <select {...register("code")}>
+                <option value="">Select</option>
+                <option value="physics-1">Physics First Paper</option>
+                <option value="physics-2">Physics Second Paper</option>
+                <option value="chemistry-1">Chemistry First Paper</option>
+                <option value="chemistry-2">Chemistry Second Paper</option>
+                <option value="math-1">Math First Paper</option>
+                <option value="math-2">Math Second Paper</option>
+              </select>
+              <textarea type="text" placeholder="Course description" {...register("course_description")} />
+              <input type="number" placeholder="Course fee" {...register("course_fee")}/>
+              <button className="input-btn">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     )

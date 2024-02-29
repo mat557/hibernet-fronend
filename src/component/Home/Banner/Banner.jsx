@@ -5,9 +5,11 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { useGetAllCoursesQuery } from '../../DashBoard/Courses/courseApiSlice'
 import Loader from '../../../shared/Loader/Loader'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Banner = () => {
     let content
+    const navigate = useNavigate()
     const [current,setCurrent] = useState(0)
     const {data:courses , isLoading} = useGetAllCoursesQuery()
     
@@ -38,7 +40,7 @@ const Banner = () => {
                         <h1>{bannerData[current]?.course_title}</h1>
                         <p>Total classes- {bannerData[current]?.course_nmbr}</p>
                         <p>Total exams- {bannerData[current]?.course_exam}</p>
-                        <button>check<FontAwesomeIcon icon={faArrowRight}/></button>
+                        <button onClick={() => navigate(`/course/details/${bannerData[current]?._id}`)}>check<FontAwesomeIcon icon={faArrowRight}/></button>
                     </div>
                     <div className='navigation'>
                         <button className={current === 0 ? 'dis' : 'nav-btn'} onClick={() => handlePrv()}><FontAwesomeIcon icon={faArrowLeft}/></button>

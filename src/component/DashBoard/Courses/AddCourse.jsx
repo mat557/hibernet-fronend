@@ -23,7 +23,6 @@ const AddCourse = () => {
       }
     }
 
-
     content = (
       <div className="add-course-holder">
         <h1 className="text-[white] font">Add course</h1>

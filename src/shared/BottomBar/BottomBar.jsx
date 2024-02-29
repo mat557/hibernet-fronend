@@ -22,14 +22,13 @@ const BottomBar = ({dashOpen,setDashOpen}) => {
         }
     },[show,location])
     
-    console.log(location?.pathname.indexOf('/dash'))
     
     content = (
         <div className="bottom-nav">
             <div className="content">
-                <Link to='/blog' className='short-link'><FontAwesomeIcon className='short-link-icon' icon={faEnvelope}/></Link>
-                <Link to='/qna'className='short-link'><FontAwesomeIcon className='short-link-icon' icon={faCircleQuestion}/></Link>
-                <Link to='/contact' className='short-link'><FontAwesomeIcon className='short-link-icon' icon={faMessage}/></Link>
+                {!show && <Link to='/blog' className='short-link'><FontAwesomeIcon className='short-link-icon' icon={faEnvelope}/></Link>}
+                {!show && <Link to='/qna'className='short-link'><FontAwesomeIcon className='short-link-icon' icon={faCircleQuestion}/></Link>}
+                {!show && <Link to='/contact' className='short-link'><FontAwesomeIcon className='short-link-icon' icon={faMessage}/></Link>}
                 {show && <Link className='short-link' onClick={()=> setDashOpen(!dashOpen)}><FontAwesomeIcon className='short-link-icon' icon={dashOpen ? faArrowAltCircleLeft : faArrowAltCircleRight}/></Link>}
             </div>
         </div>

@@ -12,6 +12,7 @@
     height: 100vh;
     background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4));
     transition: .4s ease-in-out;
+    overflow-y: scroll;
 }
 
 .open{

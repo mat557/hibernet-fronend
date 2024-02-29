@@ -28,18 +28,20 @@ const UpdateBlog = ({ blogModalOpen , setblogModalOpen , blogUpdateId }) => {
   }
   content = (
       <div className={blogModalOpen ? 'updatebox-holder open' : 'updatebox-holder'}>
-        <div className="update-content">
-          <h5 className='modal-h' >proceed for id- {blogUpdateId} ?</h5>
-          <button className='modal-close' onClick={() => setblogModalOpen(!blogModalOpen)}><FontAwesomeIcon icon={faXmark}/></button>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input type="text" placeholder="blog Title" {...register("blog_title")}/>
-            <input type="text"  placeholder="Author name" {...register("blog_author")}/>
-            <input type="email"  placeholder="Author email" {...register("author_email")}/>
-            <input type="text"  placeholder="Tags{add comma after each tag}" {...register("blog_tag")}/>
-            <textarea type="text"  placeholder="Content" {...register("blog_content")}/>
-            
-            <button className="input-btn">Submit</button>
-        </form>
+        <div className="update-area">
+          <div className="update-content">
+            <h5 className='modal-h' >proceed for id- {blogUpdateId} ?</h5>
+            <button className='modal-close' onClick={() => setblogModalOpen(!blogModalOpen)}><FontAwesomeIcon icon={faXmark}/></button>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input type="text" placeholder="blog Title" {...register("blog_title")}/>
+              <input type="text"  placeholder="Author name" {...register("blog_author")}/>
+              <input type="email"  placeholder="Author email" {...register("author_email")}/>
+              <input type="text"  placeholder="Tags{add comma after each tag}" {...register("blog_tag")}/>
+              <textarea type="text"  placeholder="Content" {...register("blog_content")}/>
+              
+              <button className="input-btn">Submit</button>
+          </form>
+          </div>
         </div>
       </div>
     )

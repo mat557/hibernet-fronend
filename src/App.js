@@ -25,6 +25,7 @@ import AddCourse from "./component/DashBoard/Courses/AddCourse"
 import UpdateCourse from "./component/DashBoard/Courses/UpdateCourse"
 import NotFound from "./shared/NotFound/NotFound"
 import User from "./component/DashBoard/User/User"
+import CourseDetails from "./component/Courses/CourseDetails"
 
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
             <Route element={<ConsitantLogIn />}>
               <Route path='/' element={<Home />} />
               <Route path='courses' element={<Courses />} />
+              <Route path='course/details/:id' element={<CourseDetails />} />
               <Route path='about' element={<About />} />
               <Route path='faq' element={<FAQ />} />
               <Route element={<RequreAuth />}>

@@ -24,7 +24,7 @@
     position: fixed;
     background: #969696;
     height: auto;
-    width: 10%;
+    width: 15%;
     height: 100%;
     z-index: -100;
     opacity: 0;
@@ -39,7 +39,7 @@
     transition: all .52s;
     overflow-y: scroll;
     color: white;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
   }
   
   .dash-nav-open {
