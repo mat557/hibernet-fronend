@@ -13,7 +13,7 @@ const CourseDetails = () => {
         return <Loader />
     }
 
-    console.log(course.course)
+
     
     content = (
         <div className='course-details-holder'>
@@ -21,10 +21,12 @@ const CourseDetails = () => {
                 <div className='details'>
                     <h1>{course.course.course_description}</h1>
                 </div>
-                <p>{course.course.course_title}</p>
-                <p>{course.course.course_exam}</p>
-                <p>{course.course.course_assignment}</p>
-                <p>{course.course.course_nmbr}</p>
+
+                <h2>{course.course.course_title}</h2>
+                <p>Total exams: {course.course.course_exam}</p>
+                <p>Total assignments: {course.course.course_assignment}</p>
+                <p>Total classed:{course.course.course_nmbr}</p>
+                <p>Total classed:{course.course.course_fee}</p>
                 <button>Enrol</button>
             </div>
         </div>
