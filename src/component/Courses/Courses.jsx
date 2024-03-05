@@ -38,7 +38,7 @@ const Courses = () => {
                     </div>
                 )}
             </div>
-            <Footer />
+            <Footer/>
         </div>
     )
     return content

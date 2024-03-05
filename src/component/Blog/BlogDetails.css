@@ -1,0 +1,57 @@
+.blog-details-holder{
+    background: linear-gradient(rgba(47, 110, 107,0.9),rgba(0,0,0,0.6)),url('../../assets/banner.jpg');
+    height: 100vh;
+    max-width: 2000px;
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
+    overflow-y: scroll;
+}
+
+.blog-detail{
+    max-width: 1300px;
+    margin: 10vh auto;
+    padding: 10px;
+}
+
+.blog-contents{
+    text-align: justify;
+}
+
+.blog-contents h1{
+    color: white;
+    padding: 40px 0;
+    font-size: 35px;
+}
+
+.blog-contents p{
+    color: white;
+    font-size: 18px;
+}
+
+.blog-author{
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.blog-author h3{
+    color: white;
+}
+
+.reaction{
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.reaction-like{
+    font-size: 22px;
+    color: white;
+}
+
+
+.found{
+    font-size: 22px;
+    color: teal;
+}

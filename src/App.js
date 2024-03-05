@@ -26,6 +26,7 @@ import UpdateCourse from "./component/DashBoard/Courses/UpdateCourse"
 import NotFound from "./shared/NotFound/NotFound"
 import User from "./component/DashBoard/User/User"
 import CourseDetails from "./component/Courses/CourseDetails"
+import BlogDetails from "./component/Blog/BlogDetails"
 
 
 function App() {
@@ -96,6 +97,7 @@ function App() {
                   </Route>
               </Route>
               <Route path='blog' element={<Blog />} />
+              <Route path='blog/details/:id' element={<BlogDetails />} />
               <Route path='qna' element={<Qna />} />
             </Route>
             <Route path='login' element={<Login />} />

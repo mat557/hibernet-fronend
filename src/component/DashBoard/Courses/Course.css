@@ -1,6 +1,7 @@
 .dash-course-holder{
     margin-top: 13vh;
     padding: 10px 0px 40px 0px;
+    overflow: scroll;
 }
 
 .dash-course-holder h1{

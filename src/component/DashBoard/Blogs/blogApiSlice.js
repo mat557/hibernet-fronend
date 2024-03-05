@@ -76,8 +76,8 @@ export const blogApiSlice = apiSlice.injectEndpoints({
                                 blog_content : credentials.blog_content,
                                 blog_tag     : credentials.blog_tag,
                                 postedAt     : res?.data?.doc?.postedAt,
-                                like_count   : 0,
-                                dislike_count: 0,
+                                like_count   : [],
+                                dislike_count: [],
                                 update_count : 0,
                             }
 
@@ -110,7 +110,42 @@ export const blogApiSlice = apiSlice.injectEndpoints({
                 }
             }
         }),
-    })
+
+
+        likeBlog: builder.mutation({
+            query: ( credentials ) => ({
+                url: `blogs/like/blog`,
+                method:'post',
+                body: credentials
+            }),
+            
+            async onQueryStarted( credentials , {dispatch , queryFulfilled}){
+                try{
+                    const res = await queryFulfilled
+                    dispatch(
+                        blogApiSlice.util.updateQueryData( 'getSingleBlog' , credentials.id , (draft) => {
+                            console.log(JSON.stringify(draft.blog.like_count))
+                            console.log(res)
+                            if( res?.data?.target === 0 ) draft?.blog?.like_count.push(credentials.email)
+                            if( res?.data?.target === 1 ) {
+                                const index = draft?.blog?.like_count.indexOf(credentials.email)
+                                if(index > -1){
+                                    draft?.blog?.like_count.splice(index,1)
+                                }
+                                // draft?.blog?.like_count.pop(credentials.email)
+                            }
+                            console.log(JSON.stringify(draft.blog.like_count))
+                        })
+                    )
+                }catch(err){
+                    console.log(err)
+                }
+            }
+        
+        }),
+
+
+    }) 
 })
 
 export const {
@@ -119,5 +154,6 @@ export const {
     useGetAllBlogsQuery,
     useUpdateSingleBlogMutation,
     useInsertSingleBlogMutation,
-    useDeleteSingleBlogMutation
+    useDeleteSingleBlogMutation,
+    useLikeBlogMutation
 } = blogApiSlice
