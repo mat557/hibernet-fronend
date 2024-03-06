@@ -124,17 +124,55 @@ export const blogApiSlice = apiSlice.injectEndpoints({
                     const res = await queryFulfilled
                     dispatch(
                         blogApiSlice.util.updateQueryData( 'getSingleBlog' , credentials.id , (draft) => {
-                            console.log(JSON.stringify(draft.blog.like_count))
-                            console.log(res)
-                            if( res?.data?.target === 0 ) draft?.blog?.like_count.push(credentials.email)
+                            if( res?.data?.target === 0 ) {
+                                draft?.blog?.like_count.push(credentials.email)
+                                const index = draft?.blog?.dislike_count.indexOf(credentials.email)
+                                if(index > -1){
+                                    draft?.blog?.dislike_count.splice(index,1)
+                                }
+                            }
                             if( res?.data?.target === 1 ) {
                                 const index = draft?.blog?.like_count.indexOf(credentials.email)
                                 if(index > -1){
                                     draft?.blog?.like_count.splice(index,1)
                                 }
-                                // draft?.blog?.like_count.pop(credentials.email)
                             }
-                            console.log(JSON.stringify(draft.blog.like_count))
+                        })
+                    )
+                }catch(err){
+                    console.log(err)
+                }
+            }
+        
+        }),
+
+
+
+        disLikeBlog: builder.mutation({
+            query: ( credentials ) => ({
+                url: `blogs/dislike/blog`,
+                method:'post',
+                body: credentials
+            }),
+            
+            async onQueryStarted( credentials , {dispatch , queryFulfilled}){
+                try{
+                    const res = await queryFulfilled
+                    dispatch(
+                        blogApiSlice.util.updateQueryData( 'getSingleBlog' , credentials.id , (draft) => {
+                            if( res?.data?.target === 0 ) {
+                                draft?.blog?.dislike_count.push(credentials.email)
+                                const index = draft?.blog?.like_count.indexOf(credentials.email)
+                                if(index > -1){
+                                    draft?.blog?.like_count.splice(index,1)
+                                }
+                            }
+                            if( res?.data?.target === 1 ) {
+                                const index = draft?.blog?.dislike_count.indexOf(credentials.email)
+                                if(index > -1){
+                                    draft?.blog?.dislike_count.splice(index,1)
+                                }
+                            }
                         })
                     )
                 }catch(err){
@@ -155,5 +193,6 @@ export const {
     useUpdateSingleBlogMutation,
     useInsertSingleBlogMutation,
     useDeleteSingleBlogMutation,
-    useLikeBlogMutation
+    useLikeBlogMutation,
+    useDisLikeBlogMutation
 } = blogApiSlice
