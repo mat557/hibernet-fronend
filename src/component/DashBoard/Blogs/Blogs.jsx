@@ -82,8 +82,8 @@ const Blogs = () => {
                             <td>{blog?.blog_tag}</td>
                             <td>{blog?.blog_title}</td>
                             <td>{blog?.update_count} times</td>
-                            <td>{blog?.dislike_count}</td>
-                            <td>{blog?.like_count}</td>
+                            <td>{blog?.dislike_count.length}</td>
+                            <td>{blog?.like_count.length}</td>
                             <td>{blog?.postedAt}</td>
                             <td><button onClick={() => handleDeleteCourse(blog._id)}><FontAwesomeIcon icon={faTrashCan} size='xl'/></button></td>
                             <td><button onClick={() => {setblogModalOpen(!blogModalOpen);setBlogUpdateId(blog._id)}}><FontAwesomeIcon icon={faPenNib} size='xl'/></button></td>
