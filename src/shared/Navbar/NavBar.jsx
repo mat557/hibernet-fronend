@@ -25,7 +25,6 @@ const NavBar = ({ open , setOpen , navmenu }) => {
         dispatch(logOut())
     }
     
-
     content = (
         <div ref={navmenu} className={ small || location?.pathname?.indexOf('/dash') !== -1  ? "navbar-holder regular" : "navbar-holder"}>
             <div className='navbar-content'>

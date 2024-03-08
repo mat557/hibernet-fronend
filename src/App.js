@@ -20,13 +20,15 @@ import Profile from "./component/DashBoard/Profile/Profile"
 import Comment from "./component/DashBoard/Comment/Comment"
 import Question from "./component/DashBoard/Question/Question"
 import AddBlogs from "./component/DashBoard/Blogs/AddBlogs"
-import UpdateBlog from "./component/DashBoard/Blogs/UpdateBlog"
 import AddCourse from "./component/DashBoard/Courses/AddCourse"
-import UpdateCourse from "./component/DashBoard/Courses/UpdateCourse"
 import NotFound from "./shared/NotFound/NotFound"
 import User from "./component/DashBoard/User/User"
 import CourseDetails from "./component/Courses/CourseDetails"
 import BlogDetails from "./component/Blog/BlogDetails"
+import Settings from "./component/DashBoard/Profile/Settings/Settings"
+import Marks from "./component/DashBoard/Profile/Marks/Marks"
+import Analytics from "./component/DashBoard/Profile/Analytics/Analytics"
+import LeaderBoard from "./component/DashBoard/Profile/LeaderBoard/LeaderBoard"
 
 
 function App() {
@@ -86,14 +88,15 @@ function App() {
                       <Route index element={<Profile />}/>
                       <Route path="course" element={<Course />}/>
                       <Route path="course/add" element={<AddCourse />}/>
-                      {/* <Route path="course/update" element={<UpdateCourse />}/> */}
                       <Route path="blog" element={<Blogs />}/>
                       <Route path="blog/add" element={<AddBlogs />}/>
-                      {/* <Route path="blog/update" element={<UpdateBlog />}/> */}
                       <Route path="comment" element={<Comment />}/>
                       <Route path="question" element={<Question />}/>
                       <Route path="users" element={<User />}/>
-                      {/* <Route path="user/all" element={<Question />}/> */}
+                      <Route path="user/settings" element={<Settings />}/>
+                      <Route path="user/marks" element={<Marks />}/>
+                      <Route path="user/analytics" element={<Analytics />}/>
+                      <Route path="user/leaderboard" element={<LeaderBoard />}/>
                   </Route>
               </Route>
               <Route path='blog' element={<Blog />} />

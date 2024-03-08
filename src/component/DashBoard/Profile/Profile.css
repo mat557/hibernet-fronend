@@ -1,0 +1,47 @@
+.profile-container{
+    height: 100vh;
+    width: 100%;
+    padding-top: 11vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-data{
+    border: 2px solid white;
+    height: 65vh;
+    width: 40%;
+    padding: 10px;
+}
+
+.data-text{
+    background-color: gray;
+    height: 90%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.data-text h2{
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px;
+}
+
+.profile-link{
+    height: 10%;
+    background-color: white;
+    border-bottom: 4px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media screen and (max-width:500px) {
+    .profile-data{
+        width: 95%;
+    }
+}

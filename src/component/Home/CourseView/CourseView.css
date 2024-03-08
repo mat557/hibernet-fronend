@@ -1,0 +1,130 @@
+.courseview-holder {
+    max-width: 2000px;
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
+}
+
+.course-overview-page {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.course-overview-title {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.course-overview-title-tag {
+    font-weight: 600; 
+    font-size: 35px;
+    line-height: 35px;
+    margin: 0;
+    gap: 10px;
+    display: flex;
+    flex-grow: 1;
+    align-items: baseline;
+    color: black;
+    font-weight: 100;
+}
+
+.course-overview-title-tag:after {
+    background-color: teal;
+    content: "";
+    display: block;
+    height: 2px;
+    border: none;
+    flex-grow: 1;
+}
+
+.link-header{
+    gap: 20px;
+    margin-left: 20px;
+    text-decoration:underline;
+    font-weight: 100;
+    color: teal;
+}
+
+.home-overview-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.home-overview{
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    gap: 10px;
+    padding: 20px;
+}
+
+
+.home-overview-icon{
+    font-size: 80px;
+    border: 9px solid teal;
+    color: teal;
+    padding: 5px;
+}
+
+.home-overview-img{
+    width: 120px;
+    height: 120px;
+    color: teal;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.overview-text{
+    border-bottom: 1px solid teal;
+}
+
+.overview-text h2{
+    font-size: 22px;
+    font-weight: 700;
+    color: teal;
+
+}
+
+@media screen and (max-width:600px) {
+    .home-overview-content{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .course-overview-title-tag {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .course-overview-title{
+        position: relative;
+        padding: 10px;
+    }
+
+    .link-header{
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .home-overview{
+        padding: 8px;
+    }
+    .overview-text{
+        text-align: justify;
+        margin-top: -10px;
+    }
+
+    .home-overview-icon{
+        height: 100px;
+        width: 60px;
+    }
+
+    .overview-text h2{
+        font-size: 18px;
+        line-height: 35px;
+        text-align: justify;
+    }
+}

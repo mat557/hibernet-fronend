@@ -1,0 +1,14 @@
+.blogview-holder {
+    max-width: 2000px;
+    margin: 10vh auto;
+    background: white;
+    padding: 20px 0;
+    background-position: center;
+    background-size: cover;
+}
+
+.course-overview-link{
+    text-decoration: underline;
+    color: teal;
+    margin-left: 10px;
+}

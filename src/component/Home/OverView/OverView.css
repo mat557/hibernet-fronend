@@ -1,0 +1,134 @@
+.overview-holder{
+    max-width: 2000px;
+    height: auto;
+    margin: 10vh auto;
+    padding: 30px 0;
+    background-color: #dfdddd;
+}
+
+.overview{
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* .overview h1{
+    font-size: 40px;
+    color: teal;
+} */
+
+
+.icon-overview{
+    border: 10px solid teal;
+    border-radius: 50%;
+    padding: 10px;
+    color: teal;
+    font-size: 80px;
+    font-weight: 800;
+    width: 100px;
+}
+
+.overview-details{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.overview-detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 32%;
+    background: #f3f3f3;
+    padding: 30px 10px;
+    border-radius: 4px;
+}
+
+.overview-detail-title{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    text-align: justify;
+    padding-left: 9px;
+}
+
+.overview-detail-title h1{
+    font-size: 25px;
+}
+
+.overview-detail-title h1:hover{
+    color: teal;
+}
+
+.overview-detail-title p{
+    font-size: 15px;
+}
+
+.overview-detail-title p:hover{
+    color: teal;
+}
+
+.overview-detail-title button{
+    font-size: 15px;
+    font-weight:900;
+    padding: 3px 7px;
+    border: 4px solid black;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.overview-detail-title button:hover{
+    border: 4px solid teal;
+    color: teal;
+}
+
+@media screen and (max-width:500px) {
+    .overview-holder{
+        padding: 20px 0;
+        margin: 10vh auto;
+    }
+    .overview-details{
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 10px;
+        gap: 30px;
+    }
+        
+    .overview-detail{
+        padding: 10px 10px;
+        border-radius: 2px;
+    }
+
+
+    .overview-detail{
+        width: 100%;
+    }
+    
+    .overview-detail-title h1{
+        font-size: 20px;
+    }
+
+    .overview-detail-title button{
+        font-size: 15px;
+        font-weight:900;
+        padding: 2px;
+        border: none;
+        margin-top: 5px;
+    }
+
+    
+    .icon-overview{
+        border: 5px solid teal;
+        border-radius: 50%;
+        padding: 10px;
+        color: teal;
+        font-size: 80px;
+        width: 100px;
+    }
+    
+}

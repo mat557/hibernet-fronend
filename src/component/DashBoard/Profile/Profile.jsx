@@ -1,16 +1,51 @@
+import { useNavigate } from "react-router-dom"
+import useAuth from '../../../hooks/useAuth'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Loader from '../../../shared/Loader/Loader'
+import { useGetSingleUserQuery } from '../../Auth/authApiSlice'
 import './Profile.css'
+import { faGear } from '@fortawesome/free-solid-svg-icons'
 
 const Profile = () => {
-  return (
-    <div className='w-full h-auto bg-[white]'>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis eaque cum, aliquid voluptatum animi architecto hic eos 
-        consectetur itaque enim necessitatibus? Animi, perspiciatis! Culpa expedita impedit eius quidem officiis ab natus 
-        obcaecati adipisci harum ipsa assumenda nihil sed ullam voluptatum, enim voluptatem repellendus possimus explicabo 
-        necessitatibus error dignissimos commodi. Odio a cupiditate sed deleniti ut optio, omnis temporibus voluptates inventore 
-        saepe repellat hic sunt aperiam eos nesciunt, necessitatibus voluptate officia fugiat est cumque porro molestiae obcaecati! Cumque, aliquid recusandae voluptates labore iure quas quo et similique voluptatem? Illo 
-        at enim tenetur, nobis necessitatibus et repellendus blanditiis ea cupiditate perspiciatis laboriosam.
-    </div>
-  )
+    let content
+    const navigate = useNavigate()
+    const [email] = useAuth()
+    const {data: user , error , isLoading}  = useGetSingleUserQuery(email)
+    
+    if(isLoading){
+      return <Loader />
+    }
+    const handleChange = (event) => {
+      // setValue(event.target.value);
+      // console.log(event.target.value)
+      navigate(`user/${event.target.value}`)
+    }
+    content = (
+      <div className='profile-container'>
+          <div className='profile-data'>
+            
+              <div className='profile-link'>
+                <FontAwesomeIcon onClick={() => navigate('user/settings')} icon={faGear}/>
+                <select onChange={handleChange}>
+                  <option value="">Check</option>
+                  <option value="marks">Your Marks</option>
+                  <option value="LeaderBoard">Leader Board</option>
+                  <option value="analytics">Analytics</option>
+                </select>
+              </div>
+
+              <div className="data-text">
+                <h2>{user?.first_name}</h2>
+                <h2>Email:  {user?.email}</h2>
+                <h2>Mobile: {user?.number}</h2>
+                <h2>Roles:  {user?.role?.join(', ')}</h2>
+              </div>
+
+          </div>
+      </div>
+    )
+
+    return content
 }
 
 export default Profile

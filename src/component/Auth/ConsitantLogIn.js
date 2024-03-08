@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import useConsistant from '../../hooks/useConsistant'
 import useAuth from '../../hooks/useAuth'
-import { useConsistMutation } from './authApiSlice'
+import { useConsistMutation, useGetSingleUserQuery } from './authApiSlice'
 import { Outlet } from 'react-router-dom'
 import { setState } from '../../feature/auth/authSlice'
 import { useDispatch } from 'react-redux'
@@ -13,6 +13,7 @@ const ConsitantLogIn = () => {
     const dispatch = useDispatch()
     const [consistant] = useConsistant()
     const [currentSuccess,setCurrentSuccess] = useState(false)
+    const {error: userError} = useGetSingleUserQuery(email)
     const [consist,{isUninitialized,isError,isLoading,isSuccess,error}] = useConsistMutation()
     const token = localStorage.getItem('refresh_token')
 
@@ -41,7 +42,8 @@ const ConsitantLogIn = () => {
         return <Loader />
     }
 
-    if(isError && error && error?.status === 400){
+
+    if(isError && error && error?.status === 400 || userError?.status === 400){
         localStorage.removeItem('refresh_token')
     }
 

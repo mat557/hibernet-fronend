@@ -40,9 +40,15 @@ export const authApiSlice = apiSlice.injectEndpoints({
                 url   : `/user/consist/${token}`,
                 method: 'get',
             })
-        })
+        }),
 
-        
+        getSingleUser:builder.query({
+            query: (email) =>({
+                url   : `/user/profile/${email}`,
+                method: 'get',
+            })
+        }),
+         
     })
 }) 
 
@@ -51,7 +57,8 @@ export const {
     useSignupMutation,
     useLogoutMutation,
     useGetUsersQuery,
-    useConsistMutation
+    useConsistMutation,
+    useGetSingleUserQuery
 } = authApiSlice
 
 
