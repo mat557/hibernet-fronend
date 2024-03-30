@@ -16,8 +16,6 @@ const Profile = () => {
       return <Loader />
     }
     const handleChange = (event) => {
-      // setValue(event.target.value);
-      // console.log(event.target.value)
       navigate(`user/${event.target.value}`)
     }
     content = (

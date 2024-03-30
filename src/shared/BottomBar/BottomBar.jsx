@@ -23,6 +23,7 @@ const BottomBar = ({dashOpen,setDashOpen}) => {
     },[show,location])
     
     
+    
     content = (
         <div className="bottom-nav">
             <div className="content">

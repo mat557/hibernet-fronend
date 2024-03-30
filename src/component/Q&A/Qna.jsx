@@ -2,12 +2,16 @@ import './Qna.css'
 
 const Qna = () => {
     let content
-    
+
+
     content = (
         <div className='QNA'>
-            <div className="QNA-header">
-                <div className="QNA-cont">
-                    <p>Ask Your question</p>
+            <div className='qna-holder'>
+                <div className='qna-content'>
+                    
+                </div>
+                <div className='your-question'>
+                sdadasda
                 </div>
             </div>
         </div>

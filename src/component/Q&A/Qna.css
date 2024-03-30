@@ -1,5 +1,5 @@
 .QNA{
-    width: 100%;
+    max-width: 2000px;
     height: 100%;
     background: linear-gradient(rgba(47, 110, 107,0.9),rgba(0,0,0,0.6)),url('../../assets/banner.jpg');
     height: 100vh;
@@ -7,23 +7,48 @@
     background-size: cover;
 }
 
-
-.QNA-header{
-    height: 30vh;
-}
-
-.QNA-cont{
+.qna-holder{
     max-width: 1300px;
     margin: 0 auto;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
+    height: 100vh;
+    padding-top: 12vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
 }
 
-.QNA-cont p{
-    font-size: 35px;
+.qna-content{
+    width: 70%;
+}
+
+.your-question{
+    width: 30%;
+    height: 90%;
+    background: white;
+    border-radius: 2px;
+}
+
+
+@media screen and (max-width:500px) {
+    .qna-holder{
+        max-width: 1300px;
+        margin: 0 auto;
+        /* height: 100vh; */
+        padding-top: 12vh;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+    
+    .qna-content{
+        width: 100%;
+        height: 100vh;
+    }
+    
+    .your-question{
+        width: 96%;
+        margin: 0 auto;
+        height: 100vh;
+        background: white;
+        border-radius: 2px;
+    }
+    
 }
